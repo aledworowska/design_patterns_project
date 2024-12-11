@@ -16,24 +16,23 @@ As bees perform tasks, their experience increases, but their stamina decreases. 
 Bees can also join forces and form teams, which are more effective than individual bees.
 
 ## Design Patterns Used in the Project
-# * Singleton:
+### · Singleton
 In the QueenBee class, the Singleton pattern is used to ensure that there is only one instance of the queen in the system. QueenBee is responsible for managing the observer list and assigning tasks to the swarms. As the central decision-making point, it must be unique to avoid conflicts and inconsistencies in the program.
 
-# * Prototype: 
+### · Prototype
 The WorkerBee and DroneBee classes implement the clone method, which allows bees to be cloned from existing prototypes. This enables the creation of bees with similar attributes and avoids reinitializing objects, saving time and resources.
 
-
-# * Adapter:
+### · Adapter
 The DroneBeeAdapter and WorkerBeeAdapter classes enable WorkerBees and DroneBees to perform tasks they were not originally designed for by adapting the logic in the work method.
 
-# * Facade : 
+### · Facade 
 The BeeWorkFacade class acts as a facade, enabling the initiation of bee tasks and task management through a single start method. It simplifies starting and managing the system while hiding its complexity (creating swarms and bees, managing tasks and swarm work,
 queen bee service).
 
-# * Observer: 
+### · Observer
 The QueenBeeObserver interface declares the queenHungry method, which is called when the QueenBee is hungry. The QueenBee class maintains a list of its observers and notifies all interested objects by invoking their queenHungry method whenever the Queen is hungry. A Swarm can act as an observer of the Queen by implementing the QueenBeeObserver interface, allowing it to react to the Queen's hunger by taking appropriate actions.
 
-# * Strategy:
+### · Strategy
 The ActionStrategy interface defines a common interface for different tasks (strategies), such as:
   - FlowersPollination,
   - HiveConstruction,
